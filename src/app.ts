@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import express, { Application } from "express";
 import { IndexRouter } from "./app/routes";
+import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
+import { notFound } from "./app/middleware/notFound";
 
 const app: Application = express()
 // Enable URL-encoded form data parsing
@@ -10,6 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/v1", IndexRouter);
+
+app.use(globalErrorHandler)
+app.use(notFound)
 
 // Basic route
 // app.get('/', (req: Request, res: Response) => {

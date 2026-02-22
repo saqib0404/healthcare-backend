@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ES2023",
-    "rootDir": "./src",
+    "rootDir": "./",
     "outDir": "./dist",
     "moduleResolution": "bundler",
     "strict": true,
@@ -12,7 +12,7 @@
     // "ignoreDeprecations": "6.0"
   },
   "include": [
-    "src/**/*"
+    "src", "prisma.config.ts"
   ],
   "exclude": [
     "node_modules",
